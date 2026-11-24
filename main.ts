@@ -21,6 +21,9 @@ if (chars.length < 1 || chars.length > MAX_CHARS) {
 if (REPLY.trim().length === 0) {
   throw new Error("reply must not be only whitespace");
 }
+if (REPLY !== REPLY.trim()) {
+  throw new Error("reply must not start or end with whitespace");
+}
 if (REPLY.includes("\n") || REPLY.includes("\r")) {
   throw new Error("reply must be a single line");
 }
